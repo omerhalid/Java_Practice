@@ -50,6 +50,7 @@ public class Main {
 
         boolean doesContain = false;
         String searchedName = "omer";
+        //you can make enhanced for loop here for(int name: names)
         for(int i=0; i< names.length; i++){
             if (names[i] == searchedName){
                 doesContain = true;
