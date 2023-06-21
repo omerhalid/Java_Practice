@@ -2,6 +2,7 @@ package cinar;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -66,6 +67,30 @@ public class Main {
                 System.out.println("Not Found!");
             }
         }
+
+        //reverse cinar.array printing
+        for(int i = names.length-1; i>=0; i--){
+            System.out.println(names[i]);
+        }
+        //advanced looping through
+        Arrays.stream(names).forEach(System.out::println);
+
+        boolean isEven = false;
+        while (!isEven){
+            for (int x : newArray){
+                if(x%2 == 0){
+                    System.out.println("This number is the first even number: "+x);
+                    isEven = true;
+                }
+            }
+        }
+
+        //user input
+        System.out.println("What is your name? ");
+        Scanner userInput = new Scanner(System.in);
+        String userName = userInput.nextLine();
+        System.out.println("Your name is "+userName);
+
     }
     static class Person {
         String name;
@@ -74,5 +99,30 @@ public class Main {
             this.name=name;
         }
     }
+
+    static class Array {
+
+        public static void main(String[] args){
+
+            char [] letters = {'A','B','C','D'};
+
+            System.out.println("Which letter do you want to look for in the letters array? ");
+            Scanner scanner = new Scanner(System.in);
+            String letter = (scanner.nextLine()).toUpperCase();
+
+            for(int i=0 ; i<letters.length; i++){
+                if(letter.equals(String.valueOf(letters[i]))){
+                    System.out.println("Found! the index number: "+i);
+                }
+                else if(letter.equalsIgnoreCase(String.valueOf(letters[i]))){
+                    System.out.println("Not found!");
+                }
+            }
+
+
+        }
+
+    }
+
 }
 
