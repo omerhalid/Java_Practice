@@ -102,27 +102,40 @@ public class Main {
 
     static class Array {
 
-        public static void main(String[] args){
+        public static void main(String[] args) {
 
-            char [] letters = {'A','B','C','D'};
+            char[] letters = {'A', 'A', 'B', 'C', 'D'};
 
             System.out.println("Which letter do you want to look for in the letters array? ");
             Scanner scanner = new Scanner(System.in);
             String letter = (scanner.nextLine()).toUpperCase();
 
-            for(int i=0 ; i<letters.length; i++){
-                if(letter.equals(String.valueOf(letters[i]))){
-                    System.out.println("Found! the index number: "+i);
-                }
-                else if(letter.equalsIgnoreCase(String.valueOf(letters[i]))){
+            for (int i = 0; i < letters.length; i++) {
+                if (letter.equals(String.valueOf(letters[i]))) {
+                    System.out.println("Found! the index number: " + i);
+                } else if (letter.equalsIgnoreCase(String.valueOf(letters[i]))) {
                     System.out.println("Not found!");
                 }
             }
 
+            countLetters(letters, 'A');
 
         }
 
+        public static void countLetters(char [] letters, char searchedLetter){
+            int counter = 0;
+
+            for (int i = 0; i <letters.length ; i++) {
+                if(searchedLetter == letters[i]){
+                        counter ++;
+                }
+            }
+            System.out.println("The number of "+ searchedLetter+ " has accured is: "+ counter);
+        }
     }
 
-}
+
+
+
+    }
 
